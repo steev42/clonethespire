@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://yevl85f5myy0"]
+
+[ext_resource type="Texture2D" uid="uid://ddm6b5n5mxxlf" path="res://art/wine-of-the-blood.webp" id="1_p58jx"]
+[ext_resource type="Script" path="res://combatants/characters/warrior/cards/warrior_true_strength.gd" id="2_u2wnf"]
+[ext_resource type="Resource" uid="uid://dfq51c8mcp610" path="res://traits/rarities/trait_rarity_rare.tres" id="2_y4o17"]
+[ext_resource type="Resource" uid="uid://2cdq85m6qvcs" path="res://traits/card_type/type_power.tres" id="4_sypbc"]
+
+[resource]
+script = ExtResource("2_u2wnf")
+id = "True Strength"
+type = 2
+rarity = 2
+target = 0
+cost = 3
+rarity_trait = ExtResource("2_y4o17")
+type_trait = ExtResource("4_sypbc")
+other_traits = Array[Resource("res://custom_resources/trait.gd")]([])
+icon = ExtResource("1_p58jx")
+card_text = "[center]Gain 3 strength per turn.[/center]"
+tooltip_text = "[center]Gain 3 strength per turn.[/center]"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CampfireHealEffect" load_steps=3 format=3 uid="uid://6lwlwim147b0"]
+
+[ext_resource type="Texture2D" uid="uid://sa8x5ddvrehl" path="res://art/campfire_button_images/Icon-Campfire.png" id="1_yrmmn"]
+[ext_resource type="Script" path="res://effects/campfire_effects/campfire_heal_effect.gd" id="2_mgwtf"]
+
+[resource]
+script = ExtResource("2_mgwtf")
+image = ExtResource("1_yrmmn")
+name = "Heal"

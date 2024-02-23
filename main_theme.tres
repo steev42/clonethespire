@@ -1,0 +1,49 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://hldgq62fqimu"]
+
+[ext_resource type="StyleBox" uid="uid://clow7bhj4nh6r" path="res://scenes/cardui/card_hover_stylebox.tres" id="1_tjr6j"]
+[ext_resource type="StyleBox" uid="uid://52rhik2orpqx" path="res://scenes/cardui/card_base_stylebox.tres" id="1_x5e7q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mcmy"]
+bg_color = Color(0.631373, 0.34902, 0.321569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.701961, 0.701961, 0.701961, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qvcyp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3l2b"]
+bg_color = Color(0.631373, 0.34902, 0.321569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.533333, 0.498039, 0.231373, 1)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = null
+Button/styles/disabled = SubResource("StyleBoxFlat_2mcmy")
+Button/styles/focus = SubResource("StyleBoxEmpty_qvcyp")
+Button/styles/hover = ExtResource("1_tjr6j")
+Button/styles/normal = ExtResource("1_x5e7q")
+Button/styles/pressed = SubResource("StyleBoxFlat_k3l2b")
+Panel/styles/panel = ExtResource("1_x5e7q")
+PanelContainer/styles/panel = ExtResource("1_x5e7q")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Trait" load_steps=3 format=3 uid="uid://cblar12bg0vdn"]
+
+[ext_resource type="Script" path="res://custom_resources/trait.gd" id="1_a1j2t"]
+[ext_resource type="Texture2D" uid="uid://d27rhwho8dxb" path="res://art/trait_images/icons8-tool-50.png" id="1_x2r6g"]
+
+[resource]
+script = ExtResource("1_a1j2t")
+trait_name = "Skill"
+image = ExtResource("1_x2r6g")
+tooltip_text = ""
+trait_type = 1
+image_modulation = Color(1, 1, 1, 1)

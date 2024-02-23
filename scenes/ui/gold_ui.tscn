@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbbwsfrtsqpv8"]
+
+[ext_resource type="Script" path="res://scenes/ui/gold_ui.gd" id="1_i1nt6"]
+[ext_resource type="Texture2D" uid="uid://cwxts7vy1mjs8" path="res://art/ravenmore_icons/64/coin.png" id="2_d50c5"]
+
+[node name="GoldUI" type="HBoxContainer"]
+offset_right = 61.0
+offset_bottom = 25.0
+size_flags_vertical = 4
+theme_override_constants/separation = 3
+script = ExtResource("1_i1nt6")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_d50c5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+text = "9999"
+vertical_alignment = 1

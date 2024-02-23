@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://c831yd0xm2rl6"]
+
+[ext_resource type="PackedScene" uid="uid://b1ktubowqfjpx" path="res://combatants/enemies/crab/crab_enemy_ai.tscn" id="1_qkjso"]
+[ext_resource type="Texture2D" uid="uid://bra41a2pie06s" path="res://art/monster_sprites/crab-giant.webp" id="2_cf1ib"]
+[ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="3_i5sh3"]
+
+[resource]
+script = ExtResource("3_i5sh3")
+ai = ExtResource("1_qkjso")
+max_health = 20
+art = ExtResource("2_cf1ib")

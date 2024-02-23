@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjygma0joekjo"]
+
+[sub_resource type="Curve" id="Curve_tj78w"]
+min_value = 0.2
+max_value = 4.0
+_data = [Vector2(0.0526316, 0.314286), 0.0, 0.0, 0, 0, Vector2(0.247368, 1.36923), 0.0, 0.0, 0, 0, Vector2(0.484211, 2.07912), 0.0, 0.0, 0, 0, Vector2(0.768421, 2.91429), 0.0, 0.0, 0, 0, Vector2(0.947368, 2.07912), 0.0, 0.0, 0, 0, Vector2(0.963158, 0.241758), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[node name="CardArc" type="Line2D"]
+position = Vector2(1, -11)
+width = 4.0
+width_curve = SubResource("Curve_tj78w")

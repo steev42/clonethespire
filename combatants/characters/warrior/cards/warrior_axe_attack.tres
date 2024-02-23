@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://cidjwny10gjaa"]
+
+[ext_resource type="Texture2D" uid="uid://dkgr5w335h2wc" path="res://art/battle-axe.webp" id="1_agh5i"]
+[ext_resource type="Script" path="res://combatants/characters/warrior/cards/warrior_axe_attack.gd" id="1_wxg1i"]
+[ext_resource type="Resource" uid="uid://br0cl04egecg5" path="res://traits/rarities/trait_rarity_starter.tres" id="2_nir61"]
+[ext_resource type="AudioStream" uid="uid://bb5r7wjdiaxuw" path="res://sound/axe.ogg" id="3_ggq3o"]
+[ext_resource type="Resource" uid="uid://wsfj6dynijj6" path="res://traits/card_type/type_attack.tres" id="5_ireh1"]
+
+[resource]
+script = ExtResource("1_wxg1i")
+id = "Axe"
+type = 0
+rarity = 0
+target = 1
+cost = 1
+rarity_trait = ExtResource("2_nir61")
+type_trait = ExtResource("5_ireh1")
+other_traits = Array[Resource("res://custom_resources/trait.gd")]([])
+icon = ExtResource("1_agh5i")
+card_text = "[center]Deal [color=\"red\"]6[/color] damage.[/center]"
+tooltip_text = "[center]Deal [color=\"red\"]6[/color] damage.[/center]"
+sound = ExtResource("3_ggq3o")

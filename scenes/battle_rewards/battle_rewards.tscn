@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://btmppk0sf8or3"]
+
+[ext_resource type="Script" path="res://scenes/battle_rewards/battle_rewards.gd" id="1_j5f5n"]
+[ext_resource type="Texture2D" uid="uid://du1484s086n1a" path="res://art/dungeon_background.jpg" id="2_0w5up"]
+[ext_resource type="PackedScene" uid="uid://c4wmvv1xnlrqo" path="res://scenes/ui/reward_ui.tscn" id="3_pbuva"]
+
+[node name="BattleRewards" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_j5f5n")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0w5up")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackgroundDimmer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.239216, 0.239216, 0.239216, 0.615686)
+
+[node name="RewardGui" parent="." instance=ExtResource("3_pbuva")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -300.0
+offset_top = -201.0
+offset_right = 300.0
+offset_bottom = 201.0
+
+[connection signal="reward_claim_complete" from="RewardGui" to="." method="_on_reward_gui_reward_claim_complete"]

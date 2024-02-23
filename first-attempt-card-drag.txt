@@ -1,0 +1,37 @@
+#ORIGINAL ATTEMPT BELOW
+#var state_text
+#enum state_enum {HAND, DRAGGING, DROPPED}
+#var current_state = state_enum.HAND
+#var start_position
+#var drag_offset
+## Called when the node enters the scene tree for the first time.
+#func _ready():
+	#state_text = get_node("State")
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+	#if current_state == state_enum.HAND:
+		#if Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT):
+			#state_text.set("text","Pressed")
+			#current_state = state_enum.DRAGGING
+			#start_position = get_screen_position()
+			#drag_offset = start_position - get_local_mouse_position()
+	#elif current_state == state_enum.DRAGGING:
+		#if not Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT):
+			#state_text.set("text","Dropped")
+			#current_state = state_enum.DROPPED
+		#else:
+			#process_drag(delta)
+	#elif current_state == state_enum.DROPPED:
+		#process_drop(delta)
+		#current_state = state_enum.HAND
+#
+#func process_drag(delta):
+	#var mousePos = get_local_mouse_position()
+	#state_text.set("text","Dragging")
+	#set_position(mousePos + drag_offset)
+	#
+#
+#func process_drop(delta):
+	#set_position(start_position)

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Trait" load_steps=3 format=3 uid="uid://b4aryujari8w4"]
+
+[ext_resource type="Texture2D" uid="uid://dry0ukoul54g6" path="res://art/white-star.png" id="1_cvq0q"]
+[ext_resource type="Script" path="res://custom_resources/trait.gd" id="2_cdj6o"]
+
+[resource]
+script = ExtResource("2_cdj6o")
+trait_name = "Uncommon"
+image = ExtResource("1_cvq0q")
+tooltip_text = ""
+trait_type = 0
+image_modulation = Color(0.392157, 0.584314, 0.929412, 1)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterEffect" load_steps=3 format=3 uid="uid://bnt1u81r3ty8p"]
+
+[ext_resource type="Texture2D" uid="uid://damvgjd0jvpln" path="res://art/drained.webp" id="1_6g5ax"]
+[ext_resource type="Script" path="res://character_effects/character_effect.gd" id="1_oes83"]
+
+[resource]
+script = ExtResource("1_oes83")
+name = "Exposed"
+icon = ExtResource("1_6g5ax")
+default_value = 0
+max_value = 999
+min_value = 0
+turn_flat_reduction = 1
+turn_multiplier = 0.0

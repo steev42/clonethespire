@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://crc1wrpqytqvr"]
+
+[ext_resource type="Script" path="res://combatants/characters/warrior/cards/warrior_slash.gd" id="1_wo3i0"]
+[ext_resource type="Texture2D" uid="uid://22w3dd3uyteq" path="res://art/steel-shield.webp" id="1_xrlyx"]
+[ext_resource type="Resource" uid="uid://br0cl04egecg5" path="res://traits/rarities/trait_rarity_starter.tres" id="2_y1jje"]
+[ext_resource type="AudioStream" uid="uid://c55d8b526og6g" path="res://sound/slash.ogg" id="3_7yj2w"]
+[ext_resource type="Resource" uid="uid://wsfj6dynijj6" path="res://traits/card_type/type_attack.tres" id="5_5jers"]
+
+[resource]
+script = ExtResource("1_wo3i0")
+id = "Slash"
+type = 0
+rarity = 0
+target = 2
+cost = 2
+rarity_trait = ExtResource("2_y1jje")
+type_trait = ExtResource("5_5jers")
+other_traits = Array[Resource("res://custom_resources/trait.gd")]([])
+icon = ExtResource("1_xrlyx")
+card_text = "[center]Deal [color=\"red\"]4[/color] damage to all enemies.[/center]"
+tooltip_text = "[center]Deal [color=\"red\"]4[/color] damage to all enemies.[/center]"
+sound = ExtResource("3_7yj2w")

@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvp0xeoha1nhi"]
+
+[ext_resource type="Script" path="res://scenes/camp/campfire.gd" id="1_d8m54"]
+[ext_resource type="Script" path="res://custom_resources/run_stats.gd" id="2_43gjn"]
+[ext_resource type="PackedScene" uid="uid://ci0yw2omi1g5f" path="res://scenes/ui/campfire_option_ui.tscn" id="2_ups8b"]
+[ext_resource type="Resource" uid="uid://6lwlwim147b0" path="res://effects/campfire_effects/campfire_heal_effect.tres" id="3_46rwo"]
+[ext_resource type="Resource" uid="uid://f1keeqnp4xd3" path="res://combatants/characters/warrior/warrior.tres" id="4_8oext"]
+
+[sub_resource type="Resource" id="Resource_8cbmk"]
+script = ExtResource("2_43gjn")
+gold = 70
+card_rewards = 3
+common_weight = 6.0
+uncommon_weight = 3.7
+rare_weight = 0.3
+campfire_options = Array[Resource("res://effects/campfire_effects/campire_effect.gd")]([ExtResource("3_46rwo")])
+campfire_selections = 1
+
+[node name="Campfire" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_d8m54")
+run_stats = SubResource("Resource_8cbmk")
+character_stats = ExtResource("4_8oext")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 421.0
+offset_top = -54.0
+offset_right = 553.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CAMPFIRE SCENE"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "Go Back"
+
+[node name="CampfireOptions" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -89.0
+offset_right = 62.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="CampfireOptionUI" parent="CampfireOptions" instance=ExtResource("2_ups8b")]
+layout_mode = 2
+effect = ExtResource("3_46rwo")
+
+[node name="CampfireOptionUI2" parent="CampfireOptions" instance=ExtResource("2_ups8b")]
+layout_mode = 2
+effect = ExtResource("3_46rwo")
+
+[node name="CampfireOptionUI3" parent="CampfireOptions" instance=ExtResource("2_ups8b")]
+layout_mode = 2
+effect = ExtResource("3_46rwo")
+
+[node name="CampfireOptionUI4" parent="CampfireOptions" instance=ExtResource("2_ups8b")]
+layout_mode = 2
+effect = ExtResource("3_46rwo")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

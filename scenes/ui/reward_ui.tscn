@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4wmvv1xnlrqo"]
+
+[ext_resource type="Script" path="res://scenes/ui/reward_ui.gd" id="1_xrm8i"]
+[ext_resource type="PackedScene" uid="uid://btim7fiqfvrph" path="res://scenes/ui/reward_button.tscn" id="2_uekih"]
+[ext_resource type="Texture2D" uid="uid://clv4tgv2m6fbv" path="res://art/ManaCoin.webp" id="3_rkowi"]
+[ext_resource type="Texture2D" uid="uid://ck8ut1feu25p3" path="res://art/rune-card.webp" id="4_6l810"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cwu7k"]
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86ndg"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[node name="RewardUI" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xrm8i")
+
+[node name="RewardVBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RewardVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "REWARDS"
+label_settings = SubResource("LabelSettings_cwu7k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewardContainer" type="PanelContainer" parent="RewardVBox"]
+custom_minimum_size = Vector2(600, 320)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_86ndg")
+
+[node name="MarginContainer" type="MarginContainer" parent="RewardVBox/RewardContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Rewards" type="VBoxContainer" parent="RewardVBox/RewardContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GoldReward" parent="RewardVBox/RewardContainer/MarginContainer/Rewards" instance=ExtResource("2_uekih")]
+layout_mode = 2
+reward_icon = ExtResource("3_rkowi")
+reward_text = "84 Gold"
+
+[node name="CardReward" parent="RewardVBox/RewardContainer/MarginContainer/Rewards" instance=ExtResource("2_uekih")]
+layout_mode = 2
+reward_icon = ExtResource("4_6l810")
+reward_text = "Add a Card"
+
+[node name="BackButton" type="Button" parent="RewardVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"
+
+[connection signal="pressed" from="RewardVBox/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://dh6ebgu44mocr"]
+
+[ext_resource type="Script" path="res://combatants/characters/warrior/cards/warrior_big_slam.gd" id="1_fmpne"]
+[ext_resource type="Texture2D" uid="uid://dhbgfnjmimvw3" path="res://art/halberd.webp" id="1_jipn2"]
+[ext_resource type="Resource" uid="uid://b4aryujari8w4" path="res://traits/rarities/trait_rarity_uncommon.tres" id="2_vmgxi"]
+[ext_resource type="AudioStream" uid="uid://c55d8b526og6g" path="res://sound/slash.ogg" id="3_3t807"]
+[ext_resource type="Resource" uid="uid://wsfj6dynijj6" path="res://traits/card_type/type_attack.tres" id="5_ecx8t"]
+
+[resource]
+script = ExtResource("1_fmpne")
+id = "Big Slam"
+type = 0
+rarity = 1
+target = 1
+cost = 2
+rarity_trait = ExtResource("2_vmgxi")
+type_trait = ExtResource("5_ecx8t")
+other_traits = Array[Resource("res://custom_resources/trait.gd")]([])
+icon = ExtResource("1_jipn2")
+card_text = "[center]Deal [color=\"red\"]10[/color] damage and apply 2 [color=\"green\"]Exposed[/color].[/center]"
+tooltip_text = "[center]Deal [color=\"red\"]10[/color] damage and apply 2 [color=\"green\"]Exposed[/color].[/center]"
+sound = ExtResource("3_3t807")

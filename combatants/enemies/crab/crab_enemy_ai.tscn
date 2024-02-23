@@ -1,0 +1,52 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1ktubowqfjpx"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_as6l4"]
+[ext_resource type="Script" path="res://combatants/enemies/crab/crab_attack_action.gd" id="2_l21nh"]
+[ext_resource type="Script" path="res://combatants/enemies/crab/crab_block_action.gd" id="3_a1j23"]
+[ext_resource type="Texture2D" uid="uid://duamxt53m8ruu" path="res://art/doomed.webp" id="3_hdmgs"]
+[ext_resource type="Script" path="res://combatants/enemies/crab/crab_mega_block_action.gd" id="4_h7tdp"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_usith"]
+[ext_resource type="AudioStream" uid="uid://x8jo2cmk40kv" path="res://sound/enemy_attack.ogg" id="5_ms2hi"]
+[ext_resource type="Texture2D" uid="uid://bxk8xbfc2sl0j" path="res://art/status_acup.webp" id="6_1pxx8"]
+[ext_resource type="AudioStream" uid="uid://c8s86ccj2cgo3" path="res://sound/enemy_block.ogg" id="8_uimin"]
+
+[sub_resource type="Resource" id="Resource_00gxg"]
+script = ExtResource("4_usith")
+number = "7"
+icon = ExtResource("3_hdmgs")
+
+[sub_resource type="Resource" id="Resource_1tfq1"]
+script = ExtResource("4_usith")
+number = ""
+icon = ExtResource("6_1pxx8")
+
+[sub_resource type="Resource" id="Resource_80e7f"]
+script = ExtResource("4_usith")
+number = ""
+icon = ExtResource("6_1pxx8")
+
+[node name="CrabEnemyAI" type="Node"]
+script = ExtResource("1_as6l4")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_l21nh")
+intent = SubResource("Resource_00gxg")
+sound = ExtResource("5_ms2hi")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_a1j23")
+block = 5
+intent = SubResource("Resource_1tfq1")
+sound = ExtResource("8_uimin")
+type = 1
+chance_weight = 1.0
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("4_h7tdp")
+hp_threshold = 4
+intent = SubResource("Resource_80e7f")
+sound = ExtResource("8_uimin")
+type = null
+chance_weight = null

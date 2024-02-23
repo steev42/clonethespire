@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://cwljgjyjpe54q"]
+
+[ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_1hdfd"]
+[ext_resource type="Texture2D" uid="uid://dqpgjfs6tg6o7" path="res://art/Melodia Token.png" id="1_e7jqa"]
+[ext_resource type="Resource" uid="uid://brg1cxhhgdk1m" path="res://combatants/characters/warrior/warrior_draftable_cards.tres" id="2_xuuwx"]
+[ext_resource type="Resource" uid="uid://dtpd7g5g326" path="res://combatants/characters/warrior/warrior_starting_deck.tres" id="3_jt0nv"]
+
+[resource]
+script = ExtResource("1_1hdfd")
+character_name = "Wizard"
+description = "Book learning, elemental mastery, and lots of magic missiles."
+portrait = ExtResource("1_e7jqa")
+starting_deck = ExtResource("3_jt0nv")
+cards_per_turn = 3
+max_mana = 4
+draftable_cards = ExtResource("2_xuuwx")
+max_health = 27
+art = ExtResource("1_e7jqa")

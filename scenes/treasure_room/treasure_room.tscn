@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmbtbcdlqh7qq"]
+
+[ext_resource type="Script" path="res://scenes/treasure_room/treasure_room.gd" id="1_vv0w7"]
+[ext_resource type="Texture2D" uid="uid://by1jt7d0g75d0" path="res://art/treasure_room.jpg" id="2_n4l6o"]
+[ext_resource type="Texture2D" uid="uid://phhfsjqq87mk" path="res://art/Treasure-Chest-PNG.png" id="3_31gtg"]
+[ext_resource type="PackedScene" uid="uid://c4wmvv1xnlrqo" path="res://scenes/ui/reward_ui.tscn" id="4_ih1v0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfhql"]
+
+[node name="TreasureRoom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_vv0w7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n4l6o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.239216, 0.239216, 0.239216, 0.407843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -28.0
+offset_right = 44.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "TREASURE ROOM SCENE"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "Go Back"
+
+[node name="OpenChest" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 683.0
+offset_top = 373.0
+offset_right = 923.0
+offset_bottom = 543.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bfhql")
+
+[node name="TextureRect" type="TextureRect" parent="OpenChest"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_31gtg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RewardGui" parent="." instance=ExtResource("4_ih1v0")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = -300.0
+offset_top = -201.0
+offset_right = 300.0
+offset_bottom = 201.0
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="OpenChest" to="." method="_on_open_chest_pressed"]
+[connection signal="reward_claim_complete" from="RewardGui" to="." method="_on_reward_gui_reward_claim_complete"]

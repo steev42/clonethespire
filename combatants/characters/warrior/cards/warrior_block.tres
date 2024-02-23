@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://2ata0y4o0k46"]
+
+[ext_resource type="Texture2D" uid="uid://5lbaadxce48d" path="res://art/tower-shield.webp" id="1_7p544"]
+[ext_resource type="Script" path="res://combatants/characters/warrior/cards/warrior_block.gd" id="1_iifim"]
+[ext_resource type="Resource" uid="uid://br0cl04egecg5" path="res://traits/rarities/trait_rarity_starter.tres" id="2_1oh8n"]
+[ext_resource type="AudioStream" uid="uid://bnhrrul02ax17" path="res://sound/block.ogg" id="3_n45hr"]
+[ext_resource type="Resource" uid="uid://cblar12bg0vdn" path="res://traits/card_type/type_skill.tres" id="5_f1igv"]
+
+[resource]
+script = ExtResource("1_iifim")
+id = "Shield"
+type = 1
+rarity = 0
+target = 0
+cost = 1
+rarity_trait = ExtResource("2_1oh8n")
+type_trait = ExtResource("5_f1igv")
+other_traits = Array[Resource("res://custom_resources/trait.gd")]([])
+icon = ExtResource("1_7p544")
+card_text = "[center]Gain [color=\"green\"]5[/color] block.[/center]"
+tooltip_text = "[center]Gain [color=\"green\"]5[/color] block.[/center]"
+sound = ExtResource("3_n45hr")
