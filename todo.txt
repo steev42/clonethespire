@@ -1,0 +1,31 @@
+Ideas
+	General Class: Varied mana/turn, varied max mana. Mana doesn't reset per turn.
+	General Class: Varied card draw/turn, varied max hand size.
+	Warrior: Does mostly physical damage and block. Can do occasional elemental damage.
+	Wizard: No card draw (except turn 1). Most cards played also draw card. Lots of high
+		cost cards. High mana limit.  Lots of elemental damage, and ways of changing
+		type of elemental damage.
+	Assassin: Stealth-heavy, bonuses in stealth. 
+	Summoner: Summons in allies. Reduce mana/turn per ally.
+	
+	MAP: Circular map with city at center, and occasional towns along the way.
+		Big boss starts at outside, and slowly spreads influence.
+		Nodes influenced by big boss are more severe. 
+		Can move in any direction; nodes will refresh after a while. But don't
+		take too long, or boss will overrun map.
+		Fog of War? Or show whole map all the time?
+	
+	ENEMIES: Enemies have decks, mana, card draw as well, instead of fixed 
+		actions. Cards can have weights like current actions.
+		
+	FLOW:
+		*Plan* Enemy Turn
+		*Plan* Ally Turn
+		Player Turn
+		Ally Turns
+		Enemy Turns
+	
+	SPECIES
+		Unique abilities
+		Very small additional deck
+	

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0h0ai4xtcail"]
+
+[ext_resource type="PackedScene" uid="uid://bc1h77vbpggug" path="res://scenes/combatants/combatant_ai.tscn" id="1_w1pmj"]
+
+[node name="CombatantAIEnemy" instance=ExtResource("1_w1pmj")]
