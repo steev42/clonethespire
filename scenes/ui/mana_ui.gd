@@ -1,11 +1,11 @@
 class_name ManaUI
 extends Panel
 
-@export var char_stats: CharacterStats: set = _set_char_stats
+@export var char_stats: Stats: set = _set_char_stats
 
 @onready var mana_label: Label = $ManaLabel
 
-func _set_char_stats(value: CharacterStats) -> void:
+func _set_char_stats(value: Stats) -> void:
 	char_stats = value
 	
 	if not char_stats.stats_changed.is_connected(_on_stats_changed):

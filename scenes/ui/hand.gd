@@ -1,7 +1,7 @@
 class_name Hand
 extends HBoxContainer
 
-@export var char_stats: CharacterStats
+@export var char_stats: Stats
 @onready var card_ui = preload("res://scenes/cardui/card_ui.tscn")
 
 func add_card(card: Card)->void:

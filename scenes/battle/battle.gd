@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var char_stats: CharacterStats
+@export var char_stats: Stats_Player
 @export var music : AudioStream
 
 @onready var battle_ui: BattleUI = $BattleUI
@@ -11,7 +11,7 @@ extends Node2D
 func _ready() -> void:
 	#normally, we would do this on a 'Run' level so we keep our health,
 	#gold and deck between battles
-	var new_stats: CharacterStats = char_stats.create_instance()
+	var new_stats: Stats_Player = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats  # THIS WILL BE REMOVED
 	
@@ -25,7 +25,7 @@ func _ready() -> void:
 	start_battle(new_stats)
 	battle_ui.initialize_card_pile_ui()
 
-func start_battle(stats: CharacterStats) -> void:
+func start_battle(stats: Stats_Player) -> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)
 	enemy_handler.reset_enemy_actions()

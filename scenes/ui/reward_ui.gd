@@ -15,7 +15,7 @@ const CARD_ICON := preload("res://art/white-star.png")
 const CARD_TEXT := "Add New Card"
 
 @export var run_stats: RunStats
-@export var character_stats: CharacterStats
+@export var character_stats: Stats_Player
 
 var card_reward_total_weight := 0.0
 var card_rarity_weights := {

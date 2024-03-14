@@ -11,13 +11,13 @@ const WIZARD_STATS := preload("res://combatants/characters/wizard/wizard.tres")
 @onready var description: Label = %Description
 @onready var character_portrait: TextureRect = %CharacterPortrait
 
-var current_character: CharacterStats : set = set_current_character
+var current_character: Stats_Player : set = set_current_character
 
 func _ready() -> void:
 	set_current_character(WARRIOR_STATS)
 
 
-func set_current_character(new_character: CharacterStats) -> void:
+func set_current_character(new_character: Stats_Player) -> void:
 	current_character = new_character
 	title.text = current_character.character_name
 	description.text = current_character.description

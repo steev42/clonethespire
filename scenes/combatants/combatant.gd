@@ -10,10 +10,10 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_shader_material.tres")
 
 @export var target_type : TargetType = TargetType.ENEMY
 
-@export var stats: CharacterStats : set = set_stats
+@export var stats: Stats : set = set_stats
 
 
-func set_stats(value:CharacterStats) -> void:
+func set_stats(value:Stats) -> void:
 	# If AI, need to create new instance. If player, instance created in
 	# run script (eventually--currently battle).
 	if target_type == TargetType.PLAYER:
@@ -34,7 +34,7 @@ func update_stats() -> void:
 
 
 func update_character() -> void:
-	if not stats is CharacterStats:
+	if not stats is Stats:
 		return
 	if not is_inside_tree():
 		await ready

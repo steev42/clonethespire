@@ -22,7 +22,7 @@ const MAP_SCENE = preload("res://scenes/map/map.tscn")
 @onready var deck_view: CardPileView = %DeckView
 @onready var gold_ui: GoldUI = %GoldUI
 
-var character: CharacterStats
+var character: Stats_Player
 var stats : RunStats
 
 func _ready() -> void:

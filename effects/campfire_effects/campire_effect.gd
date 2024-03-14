@@ -6,5 +6,5 @@ extends Resource
 @export var sound: AudioStream
 @export var max_uses_per_rest: int = 1
 
-func execute(_character_stats : CharacterStats) -> void:
+func execute(_character_stats : Stats_Player) -> void:
 	pass

@@ -8,7 +8,7 @@ const DRAG_STYLEBOX := preload("res://scenes/cardui/card_dragging_stylebox.tres"
 const HOVER_STYLEBOX := preload("res://scenes/cardui/card_hover_stylebox.tres")
 
 @export var card:Card : set = _set_card
-@export var char_stats: CharacterStats : set = _set_char_stats
+@export var char_stats: Stats_Player : set = _set_char_stats
 
 @onready var card_visuals: CardVisuals = $CardVisuals
 
@@ -67,7 +67,7 @@ func _set_playable(value: bool) -> void:
 		card_visuals.cost.remove_theme_color_override("font_color")
 		card_visuals.image.modulate = Color(1,1,1,1)
 
-func _set_char_stats(value: CharacterStats) -> void:
+func _set_char_stats(value: Stats_Player) -> void:
 	char_stats = value
 	char_stats.stats_changed.connect(_on_char_stats_changed)
 

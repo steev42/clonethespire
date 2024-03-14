@@ -29,3 +29,11 @@ Ideas
 		Unique abilities
 		Very small additional deck
 	
+
+TERMINOLOGY
+	Combatant -> Anything that interacts with Battle
+	Target -> Anything in the battle screen that can take damage
+	Player -> The combatant representing the player
+	Ally -> Any combatant other than the player on the player's side of combat
+	Enemy -> Any combatant not on the player's side of combat
+	Character -> DO NOT USE! In theory, would be synonymous with Target, but don't.

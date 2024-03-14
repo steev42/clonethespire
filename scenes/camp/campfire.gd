@@ -2,7 +2,7 @@ class_name CampfireUI
 extends Control
 
 @export var run_stats : RunStats
-@export var character_stats: CharacterStats
+@export var character_stats: Stats_Player
 
 @onready var campfire_options: GridContainer = %CampfireOptions
 

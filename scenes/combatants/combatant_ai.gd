@@ -13,7 +13,7 @@ func check_for_death() -> void:
 		queue_free()
 
 
-func set_stats(value: CharacterStats) -> void:
+func set_stats(value: Stats) -> void:
 	super.set_stats(value)
 	# if our stats have changed, our intent may as well.
 	if not stats.stats_changed.is_connected(update_action):

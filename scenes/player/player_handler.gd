@@ -6,12 +6,12 @@ const HAND_DISCARD_INTERVAL := 0.25
 
 @export var hand: Hand
 
-var character: CharacterStats
+var character: Stats_Player
 
 func _ready() -> void:
 	Events.card_played.connect(_on_card_played)
 
-func start_battle(char_stats: CharacterStats) -> void:
+func start_battle(char_stats: Stats_Player) -> void:
 	for card : CardUI in hand.get_children():
 		card.queue_free()
 	character = char_stats
