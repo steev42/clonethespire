@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cem4f4ixqrycy"]
+[gd_scene load_steps=6 format=3 uid="uid://cem4f4ixqrycy"]
 
 [ext_resource type="Script" path="res://scenes/combatants/combatant.gd" id="1_4rdpn"]
 [ext_resource type="Texture2D" uid="uid://dipmrdcrs68mn" path="res://art/monster_sprites/rat-giant.webp" id="2_3gwy7"]
 [ext_resource type="Texture2D" uid="uid://ciyha116r4b6y" path="res://art/symbol-nhimbaloth.webp" id="2_w0h38"]
 [ext_resource type="PackedScene" uid="uid://csbgryac7kyii" path="res://scenes/ui/stats_ui.tscn" id="4_gfrta"]
-[ext_resource type="PackedScene" uid="uid://dfwbcq1kx286y" path="res://scenes/ui/intent_ui.tscn" id="5_u01b0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gd5ac"]
 radius = 38.0
@@ -30,9 +29,3 @@ shape = SubResource("CircleShape2D_gd5ac")
 [node name="StatsUI" parent="." instance=ExtResource("4_gfrta")]
 offset_top = 44.0
 offset_bottom = 72.0
-
-[node name="IntentUI" parent="." instance=ExtResource("5_u01b0")]
-offset_left = -40.0
-offset_top = -95.0
-offset_right = 40.0
-offset_bottom = -35.0

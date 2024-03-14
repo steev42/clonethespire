@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bc1h77vbpggug"]
+[gd_scene load_steps=4 format=3 uid="uid://bc1h77vbpggug"]
 
 [ext_resource type="PackedScene" uid="uid://cem4f4ixqrycy" path="res://scenes/combatants/combatant.tscn" id="1_th1sh"]
 [ext_resource type="Script" path="res://scenes/combatants/combatant_ai.gd" id="2_g6ah4"]
+[ext_resource type="PackedScene" uid="uid://dfwbcq1kx286y" path="res://scenes/ui/intent_ui.tscn" id="3_arui2"]
 
 [node name="CombatantAI" instance=ExtResource("1_th1sh")]
 script = ExtResource("2_g6ah4")
 ai = null
+
+[node name="IntentUI" parent="." index="4" instance=ExtResource("3_arui2")]
+offset_left = -39.0
+offset_top = -96.0
+offset_right = 41.0
+offset_bottom = -36.0

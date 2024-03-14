@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce244v167ckmw"]
+[gd_scene load_steps=3 format=3 uid="uid://ce244v167ckmw"]
 
 [ext_resource type="PackedScene" uid="uid://bc1h77vbpggug" path="res://scenes/combatants/combatant_ai.tscn" id="1_s1pvk"]
+[ext_resource type="Script" path="res://scenes/combatants/combatant_ai_ally.gd" id="2_ayoya"]
 
 [node name="CombatantAIAlly" instance=ExtResource("1_s1pvk")]
+script = ExtResource("2_ayoya")
 target_type = 2

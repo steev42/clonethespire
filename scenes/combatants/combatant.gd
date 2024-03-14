@@ -12,18 +12,6 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_shader_material.tres")
 
 @export var stats: CharacterStats : set = set_stats
 
-#ENEMY FUNCTIONS						PLAYER FUNCTIONS						ALLY FUNCTIONS
-# set_current_action(EnemyAction)												YES
-# set_enemy_stats(EnemyStats)			set_character_stats(CharacterStats)		YES
-# setup_ai()																	YES
-# update_stats()						update_stats()							YES
-# update_action()																YES
-# update_enemy()						update_player()							YES
-# do_turn()																		YES
-# take_damage(int)						take_damage(int)						YES
-# _on_area_entered						add this								YES
-# _on_area_exited						add this								YES
-
 
 func set_stats(value:CharacterStats) -> void:
 	# If AI, need to create new instance. If player, instance created in
