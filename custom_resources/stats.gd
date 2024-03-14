@@ -3,11 +3,37 @@ extends Resource
 
 signal stats_changed
 
-@export var max_health :=1
-@export var art: Texture
+@export_group("Visuals")
+@export var character_name: String
+@export_multiline var description: String
+@export var portrait: Texture
+
+@export_group("Gameplay Data")
+@export_subgroup("Health")
+@export var max_health := 1
+@export var health_regeneration := 0
+@export_subgroup("Block") # TODO If block becomes an effect, remove this?
+@export var block_max := 999
+@export var block_reduction := 1000 
+@export_range(0.0,1.0,0.01) var block_multiplier := 0.0
+@export_subgroup("Mana")
+@export var max_mana := 10
+@export var mana_regeneration := 3
+@export_subgroup("Hand")
+@export var cards_per_turn := 5
+@export var max_hand_size := 12
+@export_subgroup("Cards")
+@export var starting_deck: CardPile
+@export var draftable_cards: CardPile # TODO Apply only to player?
 
 var health: int  : set = set_health
 var block: int : set = set_block
+var mana: int: set = set_mana
+
+var deck: CardPile
+var discard: CardPile
+var draw_pile: CardPile
+
 #TODO Make block an effect?
 var character_effects = {}
 
@@ -31,7 +57,35 @@ func set_block (value : int) -> void:
 	stats_changed.emit()
 
 
+func set_mana (value: int) -> void:
+	mana = clampi(value, 0, max_mana) 
+	# TODO: Allow going over maximum with effects that aren't turn-based auto-generation?
+	stats_changed.emit()
+
+
+func regenerate_mana() -> void:
+	if mana >= max_mana:
+		return
+	mana += mana_regeneration
+
+
+func reduce_block() -> void:
+	if block <= 0:
+		return
+	#Assuming multiplier is 1 or less (which it should be), then applying
+	#reduction BEFORE the multiplier should always result in the higher number
+	#so that's what we're going to go for. In practice, I assume we'll never
+	#see both of these at the same time, but it's good to plan for it.
+	#TODO Alternatively, figure out which is better and only apply it?
+	#TODO This might all be moot when we start using elemental damage.
+	block -= block_reduction
+	block *= block_multiplier
+
+
 func take_damage(damage: int) -> void:
+	# TODO Make sure PlayerStats extends this
+	# TODO Update this to apply various elemental damage and their
+	# 	associated blocking.
 	if damage <= 0:
 		return
 	var initial_damage = damage
@@ -45,8 +99,17 @@ func heal(amount: int) -> void:
 	self.health += amount
 
 
+func can_play_card(card: Card) -> bool:
+	#For AI creatures, this should be part of the AI?
+	return mana >= card.cost
+
+
 func create_instance() -> Resource:
 	var instance: Stats = self.duplicate()
 	instance.health = max_health
 	instance.block = 0
+	instance.mana = 0
+	instance.deck = instance.starting_deck.duplicate()
+	instance.draw_pile = CardPile.new()
+	instance.discard = CardPile.new()
 	return instance
