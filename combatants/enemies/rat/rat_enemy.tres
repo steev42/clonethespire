@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://b2usjj3eqijl6"]
+
+[ext_resource type="Texture2D" uid="uid://dipmrdcrs68mn" path="res://art/monster_sprites/rat-giant.webp" id="1_b304w"]
+[ext_resource type="Script" path="res://custom_resources/stats.gd" id="1_wcur2"]
+
+[resource]
+script = ExtResource("1_wcur2")
+character_name = "Rat"
+description = "A simple common rat."
+portrait = ExtResource("1_b304w")
+max_health = 10
+health_regeneration = 0
+block_max = 999
+block_reduction = 1000
+block_multiplier = 0.0
+max_mana = 10
+mana_regeneration = 3
+cards_per_turn = 0
+max_hand_size = 0

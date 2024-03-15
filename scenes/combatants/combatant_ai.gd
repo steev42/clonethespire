@@ -14,6 +14,8 @@ func check_for_death() -> void:
 
 
 func set_stats(value: Stats) -> void:
+	if not value:
+		return
 	super.set_stats(value)
 	# if our stats have changed, our intent may as well.
 	if not stats.stats_changed.is_connected(update_action):

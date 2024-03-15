@@ -1,16 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://ec7254tpq71t"]
+[gd_scene load_steps=24 format=3 uid="uid://ec7254tpq71t"]
 
 [ext_resource type="Texture2D" uid="uid://du1484s086n1a" path="res://art/dungeon_background.jpg" id="1_6sbhe"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_qwpwj"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_5sxwg"]
-[ext_resource type="PackedScene" uid="uid://d1rfnj1jmfqlm" path="res://scenes/enemy/enemy.tscn" id="2_nfg2n"]
 [ext_resource type="Resource" uid="uid://f1keeqnp4xd3" path="res://combatants/characters/warrior/warrior.tres" id="2_wisx3"]
 [ext_resource type="PackedScene" uid="uid://n4qqgvyibnyi" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_6vo1o"]
 [ext_resource type="AudioStream" uid="uid://siutennhwd0u" path="res://sound/8_bit_iced_village_lofi.mp3" id="3_mgtie"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="6_5xjsf"]
+[ext_resource type="PackedScene" uid="uid://c0h0ai4xtcail" path="res://scenes/combatants/combatant_ai_enemy.tscn" id="6_7yt4h"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_fxyow"]
-[ext_resource type="Resource" uid="uid://c831yd0xm2rl6" path="res://combatants/enemies/crab/crab_enemy.tres" id="7_nrsb0"]
+[ext_resource type="PackedScene" uid="uid://b1ktubowqfjpx" path="res://combatants/enemies/crab/crab_enemy_ai.tscn" id="7_iekho"]
 [ext_resource type="PackedScene" uid="uid://16yb4hh6qfkw" path="res://scenes/combatants/combatant_player.tscn" id="8_2gelq"]
+[ext_resource type="Resource" uid="uid://b2usjj3eqijl6" path="res://combatants/enemies/rat/rat_enemy.tres" id="8_mkd0g"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_tqb0y"]
 [ext_resource type="PackedScene" uid="uid://dp6xtaaw1550m" path="res://scenes/ui/mana_ui.tscn" id="11_7s4lt"]
 [ext_resource type="PackedScene" uid="uid://dkeapvki453k0" path="res://scenes/ui/tooltip.tscn" id="12_m4oqx"]
@@ -50,9 +51,10 @@ debug_color = Color(0, 0.6, 0.701961, 0.133333)
 [node name="EnemyHandler" type="Node2D" parent="."]
 script = ExtResource("6_5xjsf")
 
-[node name="CrabEnemy" parent="EnemyHandler" instance=ExtResource("2_nfg2n")]
-position = Vector2(801, 285)
-stats = ExtResource("7_nrsb0")
+[node name="CrabEnemy" parent="EnemyHandler" instance=ExtResource("6_7yt4h")]
+position = Vector2(862, 297)
+ai = ExtResource("7_iekho")
+stats = ExtResource("8_mkd0g")
 
 [node name="CombatantPlayer" parent="." groups=["player"] instance=ExtResource("8_2gelq")]
 position = Vector2(137, 275)
