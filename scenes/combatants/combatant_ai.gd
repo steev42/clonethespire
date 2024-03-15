@@ -40,10 +40,11 @@ func setup_ai() -> void:
 	var new_action_picker: EnemyActionPicker = ai.instantiate()
 	add_child(new_action_picker)
 	ai_action_picker = new_action_picker
-	#ai_action_picker.enemy = self
+	ai_action_picker.enemy = self
 
 
 func update_action() -> void:
+	print("trying to pick a new action")
 	if not ai_action_picker:
 		return
 	
@@ -57,8 +58,10 @@ func update_action() -> void:
 
 
 func do_turn() -> void:
+	print("doing my action...")
 	stats.block = 0 # TODO Hmmm...this should be less magic-numbery
 	if not current_action:
+		print ("Oops, no current action")
 		return
 	current_action.perform_action()
 

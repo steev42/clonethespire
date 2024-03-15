@@ -3,9 +3,10 @@ extends EnemyAction
 @export var damage := 7
 
 func perform_action() -> void:
+	print ("Crab Attack")
 	if not enemy or not target:
 		return
-	
+	print ("Have enemy and target...")
 	var tween := create_tween().set_trans(Tween.TRANS_QUINT)
 	var start := enemy.global_position
 	var end := target.global_position + Vector2.RIGHT * 96

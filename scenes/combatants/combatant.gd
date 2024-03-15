@@ -45,14 +45,18 @@ func update_character() -> void:
 	update_stats()
 
 
-func wound_feedback(amount:int) -> void:
+func take_damage(amount:int) -> void:
+	# TODO I don't like that taking the damage and showing the feedback are
+	# 	in the same function. Can we do something about that?
 	if stats.health <= 0:
 		return
 	
 	# Turn white and shake the sprite a little, then reset.
 	image.material = WHITE_SPRITE_MATERIAL
 	var tween := create_tween()
+	# shake the sprite
 	tween.tween_callback(Shaker.shake.bind(self, 15, 0.15))
+	# actually deal the damage
 	tween.tween_callback(stats.take_damage.bind(amount))
 	tween.tween_interval(0.17)
 	
@@ -62,7 +66,7 @@ func wound_feedback(amount:int) -> void:
 
 
 # Placeholder function in case I want to do something like this later.
-func heal_feedback(amount:int) -> void:
+func heal(amount:int) -> void:
 	pass
 
 

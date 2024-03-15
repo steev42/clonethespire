@@ -91,7 +91,7 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 		_:
 			return []
 
-func play(targets: Array[Node], char_stats: Stats_Player) -> void:
+func play(targets: Array[Node], char_stats: Stats) -> void:
 	Events.card_played.emit(self)
 	char_stats.mana -= cost
 	

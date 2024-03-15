@@ -17,7 +17,7 @@ signal player_damage_taken
 signal player_died
 
 #Enemy-related events
-signal enemy_action_completed(enemy: Enemy)
+signal enemy_action_completed(enemy: Combatant)
 signal enemy_turn_ended
 
 #Battle-related events

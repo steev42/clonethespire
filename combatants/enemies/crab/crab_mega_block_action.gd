@@ -14,9 +14,10 @@ func is_performable() -> bool:
 	return is_low
 
 func perform_action() -> void:
+	print ("Crab Mega-Block")
 	if not enemy or not target:
 		return
-		
+	print ("have enemy and target")	
 	var block_effect := BlockEffect.new()
 	block_effect.amount = block
 	block_effect.sound = sound

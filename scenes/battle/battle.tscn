@@ -51,7 +51,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.133333)
 [node name="EnemyHandler" type="Node2D" parent="."]
 script = ExtResource("6_5xjsf")
 
-[node name="CrabEnemy" parent="EnemyHandler" instance=ExtResource("6_7yt4h")]
+[node name="RatEnemy" parent="EnemyHandler" instance=ExtResource("6_7yt4h")]
 position = Vector2(862, 297)
 ai = ExtResource("7_iekho")
 stats = ExtResource("8_mkd0g")

@@ -10,8 +10,8 @@ enum Type {CONDITIONAL, CHANCE_BASED}
 
 @onready var accumulated_weight := 0.0
 
-var enemy: Enemy
-var target: Node2D
+var enemy: Combatant
+var target: Combatant
 
 func is_performable() -> bool:
 	return false
