@@ -54,9 +54,8 @@ script = ExtResource("6_5xjsf")
 position = Vector2(801, 285)
 stats = ExtResource("7_nrsb0")
 
-[node name="CombatantPlayer" parent="." groups=["player"] instance=ExtResource("8_2gelq")]
+[node name="CombatantPlayer" parent="." instance=ExtResource("8_2gelq")]
 position = Vector2(137, 275)
-stats = ExtResource("2_wisx3")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_6vo1o")]
 

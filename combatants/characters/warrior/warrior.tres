@@ -1,19 +1,24 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://f1keeqnp4xd3"]
+[gd_resource type="Resource" script_class="Stats_Player" load_steps=5 format=3 uid="uid://f1keeqnp4xd3"]
 
 [ext_resource type="Texture2D" uid="uid://c1s112ba3nx6t" path="res://art/Rofor Rusty Bronzebottle Token.png" id="1_0g2s3"]
+[ext_resource type="Script" path="res://custom_resources/stats_player.gd" id="1_1jlw3"]
 [ext_resource type="Resource" uid="uid://brg1cxhhgdk1m" path="res://combatants/characters/warrior/warrior_draftable_cards.tres" id="2_gbjos"]
-[ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="2_rnglp"]
 [ext_resource type="Resource" uid="uid://dtpd7g5g326" path="res://combatants/characters/warrior/warrior_starting_deck.tres" id="3_6okyb"]
 
 [resource]
-script = ExtResource("2_rnglp")
+script = ExtResource("1_1jlw3")
 character_name = "Warrior"
 description = "Slice things up.  Raise your shield.  
 Defeat the Spire."
 portrait = ExtResource("1_0g2s3")
-starting_deck = ExtResource("3_6okyb")
-cards_per_turn = 4
-max_mana = 3
-draftable_cards = ExtResource("2_gbjos")
 max_health = 35
-art = ExtResource("1_0g2s3")
+health_regeneration = 0
+block_max = 999
+block_reduction = 1000
+block_multiplier = 0.0
+max_mana = 3
+mana_regeneration = 3
+cards_per_turn = 4
+max_hand_size = 12
+starting_deck = ExtResource("3_6okyb")
+draftable_cards = ExtResource("2_gbjos")

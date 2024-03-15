@@ -5,7 +5,7 @@ extends Node2D
 
 @onready var battle_ui: BattleUI = $BattleUI
 @onready var player_handler: PlayerHandler = $PlayerHandler
-@onready var player: Player = $Player
+@onready var player: Combatant_Player = $CombatantPlayer
 @onready var enemy_handler: EnemyHandler = $EnemyHandler
 
 func _ready() -> void:
@@ -24,6 +24,7 @@ func _ready() -> void:
 	
 	start_battle(new_stats)
 	battle_ui.initialize_card_pile_ui()
+
 
 func start_battle(stats: Stats_Player) -> void:
 	get_tree().paused = false

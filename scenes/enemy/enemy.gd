@@ -57,7 +57,7 @@ func update_enemy() -> void:
 	if not is_inside_tree():
 		await ready
 	
-	sprite_2d.texture = stats.art
+	sprite_2d.texture = stats.portrait
 	setup_ai()
 	update_stats()
 	

@@ -2,6 +2,7 @@ class_name Stats
 extends Resource
 
 signal stats_changed
+signal death_check_required
 
 @export_group("Visuals")
 @export var character_name: String
@@ -50,6 +51,8 @@ func add_character_effect(effect: CharacterEffect, value: int) -> void:
 func set_health (value : int) -> void:
 	health = clampi(value, 0, max_health)
 	stats_changed.emit()
+	if health <= 0:
+		death_check_required.emit()
 
 
 func set_block (value : int) -> void:
@@ -79,7 +82,7 @@ func reduce_block() -> void:
 	#TODO Alternatively, figure out which is better and only apply it?
 	#TODO This might all be moot when we start using elemental damage.
 	block -= block_reduction
-	block *= block_multiplier
+	block = floori(block * block_multiplier)
 
 
 func take_damage(damage: int) -> void:
@@ -109,7 +112,10 @@ func create_instance() -> Resource:
 	instance.health = max_health
 	instance.block = 0
 	instance.mana = 0
-	instance.deck = instance.starting_deck.duplicate()
+	if instance.starting_deck:
+		instance.deck = instance.starting_deck.duplicate()
+	else:
+		instance.deck = CardPile.new()
 	instance.draw_pile = CardPile.new()
 	instance.discard = CardPile.new()
 	return instance

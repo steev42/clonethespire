@@ -22,7 +22,7 @@ func start_battle(char_stats: Stats_Player) -> void:
 	
 func start_turn() -> void:
 	character.block = 0
-	character.reset_mana()
+	character.regenerate_mana()
 	draw_cards(character.cards_per_turn)
 
 func end_turn() -> void:

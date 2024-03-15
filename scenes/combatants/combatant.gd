@@ -6,7 +6,6 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_shader_material.tres")
 @onready var image: Sprite2D = %Image
 @onready var pointer: Sprite2D = %Pointer
 @onready var stats_ui: StatsUI = $StatsUI as StatsUI
-#@onready var intent_ui: IntentUI = $IntentUI as IntentUI  # Move this to AICombatant!
 
 @export var target_type : TargetType = TargetType.ENEMY
 
@@ -14,6 +13,9 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_shader_material.tres")
 
 
 func set_stats(value:Stats) -> void:
+	if not value:
+		return
+
 	# If AI, need to create new instance. If player, instance created in
 	# run script (eventually--currently battle).
 	if target_type == TargetType.PLAYER:
@@ -23,14 +25,14 @@ func set_stats(value:Stats) -> void:
 	
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)
+	if not stats.death_check_required.is_connected(check_for_death):
+		stats.death_check_required.connect(check_for_death)
 	
 	update_character()
 
 
 func update_stats() -> void:
 	stats_ui.update_stats(stats)
-	# Stats have updated, so we may have died...check for this.
-	check_for_death()
 
 
 func update_character() -> void:

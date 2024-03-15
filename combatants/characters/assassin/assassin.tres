@@ -1,18 +1,23 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://bipnhm3slqc88"]
+[gd_resource type="Resource" script_class="Stats_Player" load_steps=5 format=3 uid="uid://bipnhm3slqc88"]
 
-[ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_ngayi"]
-[ext_resource type="Texture2D" uid="uid://b6bo71s5b36jg" path="res://art/Ferra Donovan-Token.png" id="1_usqby"]
+[ext_resource type="Script" path="res://custom_resources/stats_player.gd" id="1_suic5"]
+[ext_resource type="Texture2D" uid="uid://dqpgjfs6tg6o7" path="res://art/Melodia Token.png" id="2_gqqng"]
 [ext_resource type="Resource" uid="uid://brg1cxhhgdk1m" path="res://combatants/characters/warrior/warrior_draftable_cards.tres" id="2_k2t36"]
 [ext_resource type="Resource" uid="uid://dtpd7g5g326" path="res://combatants/characters/warrior/warrior_starting_deck.tres" id="3_umoog"]
 
 [resource]
-script = ExtResource("1_ngayi")
+script = ExtResource("1_suic5")
 character_name = "Assassin"
 description = "Sneaky. Never know they're there. Until they punch you to death."
-portrait = ExtResource("1_usqby")
-starting_deck = ExtResource("3_umoog")
-cards_per_turn = 5
-max_mana = 3
-draftable_cards = ExtResource("2_k2t36")
+portrait = ExtResource("2_gqqng")
 max_health = 24
-art = ExtResource("1_usqby")
+health_regeneration = 0
+block_max = 999
+block_reduction = 1000
+block_multiplier = 0.0
+max_mana = 3
+mana_regeneration = 3
+cards_per_turn = 5
+max_hand_size = 12
+starting_deck = ExtResource("3_umoog")
+draftable_cards = ExtResource("2_k2t36")

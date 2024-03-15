@@ -7,5 +7,5 @@ func execute(targets: Array[Node]) -> void:
 	for target in targets:
 		if not target:
 			continue
-		if target is Enemy or target is Player:
+		if target is Combatant:
 			target.add_character_effect(ExposedCharacterEffect.new(),amount)
