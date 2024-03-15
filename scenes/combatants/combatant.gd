@@ -74,6 +74,10 @@ func check_for_death() -> void:
 	pass
 
 
+func add_character_effect(effect: CharacterEffect, stack_size: int) -> void:
+	print ("Applying %d levels of %s" % [stack_size, effect.name])
+	pass
+
 # NOTE On the following two functions, they will *always* show the pointer. 
 # Should try to set something up that the pointer is only visible if the 
 # entered character is a valid target for the card. 

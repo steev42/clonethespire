@@ -14,8 +14,8 @@ extends Resource
 var current_value := default_value : set = _set_current_value
 
 func _on_turn_end() -> void:
-	current_value = floori(current_value * turn_multiplier) - turn_flat_reduction
-
+	current_value -= turn_flat_reduction
+	current_value = floori(current_value * turn_multiplier)
 
 func _set_current_value(value: int) -> void:
 	current_value = clampi(value, min_value, max_value)

@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="CharacterEffect" load_steps=3 format=3 uid="uid://bnt1u81r3ty8p"]
+[gd_resource type="Resource" script_class="ExposedCharacterEffect" load_steps=3 format=3 uid="uid://bnt1u81r3ty8p"]
 
 [ext_resource type="Texture2D" uid="uid://damvgjd0jvpln" path="res://art/drained.webp" id="1_6g5ax"]
-[ext_resource type="Script" path="res://character_effects/character_effect.gd" id="1_oes83"]
+[ext_resource type="Script" path="res://character_effects/exposed.gd" id="2_yj1sw"]
 
 [resource]
-script = ExtResource("1_oes83")
+script = ExtResource("2_yj1sw")
 name = "Exposed"
 icon = ExtResource("1_6g5ax")
 default_value = 0
