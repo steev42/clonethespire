@@ -8,4 +8,5 @@ func execute(targets: Array[Node]) -> void:
 		if not target:
 			continue
 		if target is Combatant:
-			target.add_character_effect(ExposedCharacterEffect.new(),amount)
+			#target.add_character_effect(ExposedCharacterEffect.new(),amount)
+			pass

@@ -2,4 +2,5 @@
 
 [ext_resource type="PackedScene" uid="uid://bc1h77vbpggug" path="res://scenes/combatants/combatant_ai.tscn" id="1_w1pmj"]
 
-[node name="CombatantAIEnemy" instance=ExtResource("1_w1pmj")]
+[node name="CombatantAIEnemy" groups=["enemies"] instance=ExtResource("1_w1pmj")]
+collision_layer = 4

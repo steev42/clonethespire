@@ -56,7 +56,7 @@ position = Vector2(862, 297)
 ai = ExtResource("7_iekho")
 stats = ExtResource("8_mkd0g")
 
-[node name="CombatantPlayer" parent="." groups=["player"] instance=ExtResource("8_2gelq")]
+[node name="CombatantPlayer" parent="." instance=ExtResource("8_2gelq")]
 position = Vector2(137, 275)
 stats = ExtResource("2_wisx3")
 

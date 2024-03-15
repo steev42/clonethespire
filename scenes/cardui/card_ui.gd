@@ -72,6 +72,7 @@ func _set_char_stats(value: Stats) -> void:
 	char_stats.stats_changed.connect(_on_char_stats_changed)
 
 func _on_drop_point_detector_area_entered(area):
+	
 	if not targets.has(area):
 		targets.append(area)
 

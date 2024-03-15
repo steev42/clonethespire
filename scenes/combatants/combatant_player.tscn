@@ -3,6 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cem4f4ixqrycy" path="res://scenes/combatants/combatant.tscn" id="1_org5a"]
 [ext_resource type="Script" path="res://scenes/combatants/combatant_player.gd" id="2_skhvy"]
 
-[node name="CombatantPlayer" instance=ExtResource("1_org5a")]
+[node name="CombatantPlayer" groups=["player"] instance=ExtResource("1_org5a")]
 script = ExtResource("2_skhvy")
 target_type = 0
