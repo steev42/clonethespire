@@ -5,7 +5,8 @@ enum TargetType {PLAYER, ENEMY, ALLY}
 const WHITE_SPRITE_MATERIAL := preload("res://art/white_shader_material.tres")
 @onready var image: Sprite2D = %Image
 @onready var pointer: Sprite2D = %Pointer
-@onready var stats_ui: StatsUI = $StatsUI as StatsUI
+@onready var stats_ui: StatsUI = $StatsUI
+@onready var effects_ui: EffectsUI = $EffectsUI
 
 @export var target_type : TargetType = TargetType.ENEMY
 
@@ -74,11 +75,15 @@ func check_for_death() -> void:
 	pass
 
 
-func add_character_effect(effect: CharacterEffect, stack_size: int) -> void:
-	print ("Applying %d levels of %s" % [stack_size, effect.name])
-	pass
+func add_character_effect(effect: TargetEffect) -> void:
+	print ("Applying %d levels of %s" % [effect.current_value, effect.name])
+	effect = stats.add_character_effect(effect)
+	effects_ui.add_effect(effect)
+	# The target_effect_ui script handles updating the label & deleting itself
+	# When needed.
 
-# NOTE On the following two functions, they will *always* show the pointer. 
+
+# TODO On the following two functions, they will *always* show the pointer. 
 # Should try to set something up that the pointer is only visible if the 
 # entered character is a valid target for the card. 
 # In the youtube tutorial, players didn't have a pointer, and allies didn't

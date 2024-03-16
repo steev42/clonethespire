@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://civ00k6c7cdgl"]
+
+[ext_resource type="Script" path="res://scenes/ui/effects_ui.gd" id="1_1i8uw"]
+
+[node name="EffectsUI" type="HBoxContainer"]
+offset_top = -1.0
+offset_right = 458.0
+offset_bottom = 149.0
+theme_override_constants/separation = 20
+script = ExtResource("1_1i8uw")

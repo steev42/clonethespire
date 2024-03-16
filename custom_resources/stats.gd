@@ -2,6 +2,7 @@ class_name Stats
 extends Resource
 
 signal stats_changed
+signal effect_updated(effect: TargetEffect)
 signal death_check_required
 
 @export_group("Visuals")
@@ -38,14 +39,15 @@ var draw_pile: CardPile
 #TODO Make block an effect?
 var character_effects = {}
 
-func add_character_effect(effect: CharacterEffect, value: int) -> void:
+func add_target_effect(effect: TargetEffect) -> TargetEffect:
 	if character_effects.has(effect.name):
-		character_effects[effect.name].current_value += value
-		print("Updated %s by %s, now at level %s"%[effect.name, value, character_effects[effect.name].current_value])
+		character_effects[effect.name].current_value += effect.current_value
+		print("Updated %s by %s, now at level %s"%[effect.name, effect.current_value, character_effects[effect.name].current_value])
 	else:
 		character_effects[effect.name] = effect
-		character_effects[effect.name].current_value = value
-		print("Added %s at level %s"%[effect.name, value])
+		character_effects[effect.name].current_value = effect.current_value
+		print("Added %s at level %s"%[effect.name, effect.current_value])
+	return character_effects[effect.name]
 
 
 func set_health (value : int) -> void:

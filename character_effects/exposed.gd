@@ -1,5 +1,5 @@
-class_name ExposedCharacterEffect
-extends CharacterEffect
+class_name ExposedTargetEffect
+extends TargetEffect
 
 
 func apply() -> void:

@@ -1,5 +1,8 @@
-class_name CharacterEffect
+class_name TargetEffect
 extends Resource
+
+signal target_effect_updated(value: int)
+signal at_default_value
 
 @export var name : String
 @export var icon : Texture
@@ -14,12 +17,13 @@ extends Resource
 var current_value := default_value : set = _set_current_value
 
 func _on_turn_end() -> void:
-	current_value -= turn_flat_reduction
-	current_value = floori(current_value * turn_multiplier)
+	current_value = floori((current_value - turn_flat_reduction) * turn_multiplier)
 
 func _set_current_value(value: int) -> void:
 	current_value = clampi(value, min_value, max_value)
-
+	target_effect_updated.emit()
+	if current_value == default_value:
+		at_default_value.emit()
 
 func apply() -> void:
 	pass
