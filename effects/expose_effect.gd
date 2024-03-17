@@ -9,5 +9,6 @@ func execute(targets: Array[Node]) -> void:
 		if not target:
 			continue
 		if target is Combatant:			
-			target.add_character_effect(EXPOSED.duplicate(),amount)
-			pass
+			var effect = EXPOSED.duplicate()
+			effect.current_value = amount
+			target.add_target_effect(effect)

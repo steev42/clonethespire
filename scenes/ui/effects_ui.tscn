@@ -3,8 +3,11 @@
 [ext_resource type="Script" path="res://scenes/ui/effects_ui.gd" id="1_1i8uw"]
 
 [node name="EffectsUI" type="HBoxContainer"]
+custom_minimum_size = Vector2(45, 45)
 offset_top = -1.0
-offset_right = 458.0
-offset_bottom = 149.0
-theme_override_constants/separation = 20
+offset_right = 400.0
+offset_bottom = 44.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+alignment = 1
 script = ExtResource("1_1i8uw")

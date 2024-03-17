@@ -1,12 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://cb0gwecw5d4ep"]
 
 [ext_resource type="Script" path="res://scenes/ui/target_effect_ui.gd" id="1_epgk8"]
-[ext_resource type="Texture2D" uid="uid://damvgjd0jvpln" path="res://art/drained.webp" id="1_oixl4"]
+[ext_resource type="Texture2D" uid="uid://coxe582rcd4t" path="res://art/ravenmore_icons/64/x.png" id="1_h11wm"]
 
 [node name="TargetEffectUI" type="TextureRect"]
+custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_oixl4")
+texture = ExtResource("1_h11wm")
+expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_epgk8")
 
 [node name="Counter" type="Label" parent="."]

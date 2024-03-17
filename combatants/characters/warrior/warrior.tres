@@ -1,17 +1,23 @@
-[gd_resource type="Resource" script_class="Stats_Player" load_steps=2 format=3 uid="uid://f1keeqnp4xd3"]
+[gd_resource type="Resource" script_class="Stats_Player" load_steps=5 format=3 uid="uid://f1keeqnp4xd3"]
 
 [ext_resource type="Script" path="res://custom_resources/stats_player.gd" id="1_1jlw3"]
+[ext_resource type="Resource" uid="uid://brg1cxhhgdk1m" path="res://combatants/characters/warrior/warrior_draftable_cards.tres" id="1_4oms5"]
+[ext_resource type="Texture2D" uid="uid://c1s112ba3nx6t" path="res://art/Rofor Rusty Bronzebottle Token.png" id="2_rxe5l"]
+[ext_resource type="Resource" uid="uid://dtpd7g5g326" path="res://combatants/characters/warrior/warrior_starting_deck.tres" id="4_gdv7t"]
 
 [resource]
 script = ExtResource("1_1jlw3")
-character_name = ""
-description = ""
-max_health = 1
+character_name = "Warrior"
+description = "Hack and Slash through the dungeon. "
+portrait = ExtResource("2_rxe5l")
+max_health = 35
 health_regeneration = 0
 block_max = 999
 block_reduction = 1000
 block_multiplier = 0.0
-max_mana = 10
+max_mana = 3
 mana_regeneration = 3
-cards_per_turn = 5
-max_hand_size = 12
+cards_per_turn = 4
+max_hand_size = 10
+starting_deck = ExtResource("4_gdv7t")
+draftable_cards = ExtResource("1_4oms5")

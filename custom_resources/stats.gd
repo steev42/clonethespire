@@ -39,8 +39,13 @@ var draw_pile: CardPile
 #TODO Make block an effect?
 var character_effects = {}
 
+func has_target_effect(effect: TargetEffect) -> bool:
+	return character_effects.has(effect.name)
+
+
 func add_target_effect(effect: TargetEffect) -> TargetEffect:
-	if character_effects.has(effect.name):
+	print (character_effects)
+	if has_target_effect(effect):
 		character_effects[effect.name].current_value += effect.current_value
 		print("Updated %s by %s, now at level %s"%[effect.name, effect.current_value, character_effects[effect.name].current_value])
 	else:

@@ -75,10 +75,11 @@ func check_for_death() -> void:
 	pass
 
 
-func add_character_effect(effect: TargetEffect) -> void:
+func add_target_effect(effect: TargetEffect) -> void:
 	print ("Applying %d levels of %s" % [effect.current_value, effect.name])
-	effect = stats.add_character_effect(effect)
-	effects_ui.add_effect(effect)
+	if not stats.has_target_effect(effect):
+		effects_ui.add_effect(effect)
+	stats.add_target_effect(effect)
 	# The target_effect_ui script handles updating the label & deleting itself
 	# When needed.
 

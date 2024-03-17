@@ -1,11 +1,11 @@
 class_name EffectsUI
 extends HBoxContainer
 
+const TARGET_EFFECT_UI = preload("res://scenes/ui/target_effect_ui.tscn")
+
 func add_effect(effect: TargetEffect) -> void:
-	var effect_icon = TargetEffectUI.new()
+	var effect_icon = TARGET_EFFECT_UI.instantiate()
 	effect_icon.effect = effect
-	effect_icon.effect.at_default_value. \
-		connect(remove_effect).bind(effect_icon)
 	add_child(effect_icon)
 
 

@@ -5,6 +5,8 @@ extends TextureRect
 @onready var counter: Label = %Counter
 
 func set_effect(new_value: TargetEffect) -> void:
+	if not is_node_ready():
+		await ready
 	effect = new_value
 	texture = effect.icon
 	
@@ -14,4 +16,7 @@ func set_effect(new_value: TargetEffect) -> void:
 
 
 func _on_target_effect_updated() -> void:
-	counter.text = str(effect.current_value)
+	if not is_node_ready():
+		await ready
+	if counter:
+		counter.text = str(effect.current_value)

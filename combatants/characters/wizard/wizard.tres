@@ -4,3 +4,14 @@
 
 [resource]
 script = ExtResource("1_ii4is")
+character_name = ""
+description = ""
+max_health = 1
+health_regeneration = 0
+block_max = 999
+block_reduction = 1000
+block_multiplier = 0.0
+max_mana = 10
+mana_regeneration = 3
+cards_per_turn = 5
+max_hand_size = 12
