@@ -37,3 +37,14 @@ TERMINOLOGY
 	Ally -> Any combatant other than the player on the player's side of combat
 	Enemy -> Any combatant not on the player's side of combat
 	Character -> DO NOT USE! In theory, would be synonymous with Target, but don't.
+
+Thoughts - for target effects
+	* Do they use all signals?  Send target to effect at creation to connect to signals?
+		* target_turn_over
+		* target_turn_start
+		* target_draw_card
+		* target_play_card
+		* target_takes_damage
+		* target_deals_damage
+		* target_effect_added
+		* target_effect_removed
