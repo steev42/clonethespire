@@ -54,7 +54,6 @@ script = ExtResource("6_5xjsf")
 [node name="RatEnemy" parent="EnemyHandler" instance=ExtResource("6_7yt4h")]
 position = Vector2(862, 297)
 ai = ExtResource("7_iekho")
-target_type = 1
 stats = ExtResource("8_mkd0g")
 
 [node name="CombatantPlayer" parent="." instance=ExtResource("8_2gelq")]

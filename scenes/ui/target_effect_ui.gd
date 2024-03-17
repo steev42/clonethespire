@@ -18,5 +18,8 @@ func set_effect(new_value: TargetEffect) -> void:
 func _on_target_effect_updated() -> void:
 	if not is_node_ready():
 		await ready
+	if effect.current_value == effect.default_value:
+		queue_free()
+		return
 	if counter:
 		counter.text = str(effect.current_value)

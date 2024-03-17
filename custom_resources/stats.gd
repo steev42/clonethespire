@@ -44,14 +44,11 @@ func has_target_effect(effect: TargetEffect) -> bool:
 
 
 func add_target_effect(effect: TargetEffect) -> TargetEffect:
-	print (character_effects)
 	if has_target_effect(effect):
 		character_effects[effect.name].current_value += effect.current_value
-		print("Updated %s by %s, now at level %s"%[effect.name, effect.current_value, character_effects[effect.name].current_value])
 	else:
 		character_effects[effect.name] = effect
-		character_effects[effect.name].current_value = effect.current_value
-		print("Added %s at level %s"%[effect.name, effect.current_value])
+		character_effects[effect.name].current_value = effect.current_value		
 	return character_effects[effect.name]
 
 

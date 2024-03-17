@@ -76,7 +76,7 @@ func check_for_death() -> void:
 
 
 func add_target_effect(effect: TargetEffect) -> void:
-	print ("Applying %d levels of %s" % [effect.current_value, effect.name])
+	Events.player_turn_ended.connect(effect._on_turn_end)
 	if not stats.has_target_effect(effect):
 		effects_ui.add_effect(effect)
 	stats.add_target_effect(effect)
